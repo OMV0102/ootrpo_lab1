@@ -140,7 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="ootrpo_lab1.cpp" />
+    <ClCompile Include="RequestAirTicket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RequestAirTicket.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
