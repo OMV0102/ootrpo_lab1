@@ -21,9 +21,15 @@
     <ClCompile Include="RequestAirTicket.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RequestAirTicket.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
