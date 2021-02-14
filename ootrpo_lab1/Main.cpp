@@ -1,7 +1,10 @@
-#include <iostream>
 #include "RequestAirTicket.h"
+#include "Menu.h"
 
-void main()
+int main()
 {
-	cout << "fff" << endl;
+	setlocale(LC_ALL, "Russian");
+
+	Menu::PrintMenu();
+	Menu::Split("==aaa=ffffff=k==gg", "=", false);
 }

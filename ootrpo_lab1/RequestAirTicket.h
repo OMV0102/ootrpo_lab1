@@ -17,7 +17,7 @@ class RequestAirTicket
 	unsigned int month = 1;	// мес€ц (даты вылета)
 	unsigned int year = 2000;// год (даты вылета)
 
-	public:				// методы
+	public:					// Set Get функции
 	bool SurnameSet(string surnameNew);
 	bool NameSet(string nameNew);
 	bool PatronymicSet(string patronymicNew);
@@ -28,6 +28,10 @@ class RequestAirTicket
 	string SurnameGet();
 	string NameGet();
 	string PatronymicGet();
-	string DateGet();
+	string DateGetString();
+
+	public:					// методы
+	string PrintToLine(char separator);
+	
 
 };

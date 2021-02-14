@@ -37,7 +37,6 @@ bool RequestAirTicket::DateSet(int dayNew, int monthNew, int yearNew)
         this->month = monthNew;
         this->year = yearNew;
         return true;
-
     }
     else
         return false;
@@ -60,6 +59,7 @@ bool RequestAirTicket::CheckDate(int dayNew, int monthNew, int yearNew)
 
     switch(monthNew)
     {
+        // мес€цы с 31 днем
         case 1:  // €нварь
         case 3:  // март
         case 5:  // май
@@ -71,7 +71,8 @@ bool RequestAirTicket::CheckDate(int dayNew, int monthNew, int yearNew)
                 return false;
             else
                 return true;
-
+        
+        // инс€цы с 30 дн€ми
         case 4:  // апрель
         case 6:  // июнь
         case 9:  // сент€брь
@@ -81,6 +82,7 @@ bool RequestAirTicket::CheckDate(int dayNew, int monthNew, int yearNew)
             else
                 return true;
 
+        // февраль
         case 2:
             // год високосный: либо кратен 400, либо кратен 4 и не кратен 100
             if(yearNew % 400 == 0 || (yearNew % 4 == 0 && yearNew % 100 != 0))
@@ -113,9 +115,10 @@ string RequestAirTicket::PatronymicGet()
 {
     return this->patronymic;
 }
-string RequestAirTicket::DateGet()
+string RequestAirTicket::DateGetString()
 {
     char *str = NULL;
     sprintf(str, "%4d-%2d-%2d", this->year, this->month, this->day);
     return string(str);
 }
+
