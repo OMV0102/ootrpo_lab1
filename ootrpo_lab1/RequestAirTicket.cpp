@@ -47,7 +47,9 @@ bool RequestAirTicket::DateSet(string dateNew)
 	if(dateNew.empty())
 		return false;
 	int dayNew = 1, monthNew = 1, yearNew = 1;
-	sscanf(dateNew.c_str(), "%4d-%2d-%2d", yearNew, monthNew, dayNew);
+    istringstream s(dateNew);
+    string separator = "-";
+    s >> this->year >> this->month >> this->day;
 	return this->DateSet(dayNew, monthNew, yearNew);
 }
 
@@ -67,17 +69,17 @@ bool RequestAirTicket::CheckDate(int dayNew, int monthNew, int yearNew)
         case 8:  // август
         case 10: // окт€брь
         case 12: // декабрь
-            if(1 < dayNew || dayNew > 31)
+            if(dayNew < 1 || dayNew > 31)
                 return false;
             else
                 return true;
         
-        // инс€цы с 30 дн€ми
+        // мес€цы с 30 дн€ми
         case 4:  // апрель
         case 6:  // июнь
         case 9:  // сент€брь
         case 11: // но€брь
-            if(1 < dayNew || dayNew > 30)
+            if(dayNew < 1 || dayNew > 30)
                 return false;
             else
                 return true;
@@ -86,12 +88,12 @@ bool RequestAirTicket::CheckDate(int dayNew, int monthNew, int yearNew)
         case 2:
             // год високосный: либо кратен 400, либо кратен 4 и не кратен 100
             if(yearNew % 400 == 0 || (yearNew % 4 == 0 && yearNew % 100 != 0))
-                if(1 < dayNew || dayNew > 29)
+                if(dayNew < 1 || dayNew > 29)
                     return false;
                 else
                     return true;
             else
-                if(1 < dayNew || dayNew > 28)
+                if(dayNew < 1 || dayNew > 28)
                     return false;
                 else
                     return true;
@@ -117,8 +119,9 @@ string RequestAirTicket::PatronymicGet()
 }
 string RequestAirTicket::DateGetString()
 {
-    char *str = NULL;
-    sprintf(str, "%4d-%2d-%2d", this->year, this->month, this->day);
-    return string(str);
+    ostringstream s;
+    string separator = "-";
+    s << this->year << separator << this->month << separator << this->day;
+    return s.str();
 }
 

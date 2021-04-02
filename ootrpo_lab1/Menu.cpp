@@ -12,10 +12,11 @@ void Menu::PrintMenu()
 	cout << "<1> Загрузить данные из файла;" << endl;
 	cout << "<2> Добавить данные из файла к загруженным;" << endl;
 	cout << "<3> Добавить данные c клавиатуры;" << endl;
-	cout << "<4> Удалить запись;" << endl;
-	cout << "<5> Удалить запись;" << endl;
+	cout << "<4> Вывести данные на экран построчно;" << endl;
+	cout << "<5> Вывести данные в файл построчно;" << endl;
 	cout << "<6> Удалить запись;" << endl;
 	cout << "<0> ВЫХОД" << endl;
+	cout << "ВЫБРАН: ";
 }
 
 vector<string> Menu::Split(string str, string separator, bool isAddNullStr)
